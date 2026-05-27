@@ -1,6 +1,7 @@
 // Copyright 2026 kPherox
 // SPDX-License-Identifier: Apache-2.0
 
+#if URLSessionDocumentLoader
 #if canImport(FoundationNetworking)
 import Foundation
 public import class FoundationNetworking.URLSession
@@ -61,3 +62,4 @@ public struct URLSessionDocumentLoader: JSONLDDocumentLoader {
     }
   }
 }
+#endif

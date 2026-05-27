@@ -39,6 +39,10 @@ var package = Package(
       targets: ["JSONLD"]
     ),
   ],
+  traits: [
+    "URLSessionDocumentLoader",
+    .default(enabledTraits: ["URLSessionDocumentLoader"]),
+  ],
   targets: [
     // Targets are the basic building blocks of a package, defining a module or a test suite.
     // Targets can depend on other targets in this package and products from dependencies.
