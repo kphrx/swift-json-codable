@@ -44,7 +44,7 @@ swift package add-target-dependency JSONLD YourTarget --package swift-json-ld
 
 ## Unsupported Features
 
-- The `processingMode` option is fixed to `json-ld-1.0` (switching is not implemented yet).
+- Only the `json-ld-1.0` processing mode is supported (switching to `json-ld-1.1` is not implemented yet).
 - JSON-LD Framing and RDF dataset conversion are out of scope for now.
 
 ## Development
