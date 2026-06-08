@@ -18,9 +18,8 @@ To process a JSON-LD document, start by wrapping your raw JSON in a ``JSONLDDocu
 
 ```swift
 import JSONLD
-import JSONCodable
 
-let processor = JSONLDProcessor()
+let processor = JSONLDProcessor(mode: .v1p0)
 
 // 1. Prepare raw input (Unresolved)
 let document = try JSONLDDocument<Unresolved>(from: [

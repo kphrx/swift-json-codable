@@ -1,4 +1,4 @@
-// swift-tools-version: 6.2
+// swift-tools-version: 6.1
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -14,11 +14,9 @@ let swiftSettings: [SwiftSetting] = [
   .enableUpcomingFeature("ExistentialAny"),
   .enableUpcomingFeature("InternalImportsByDefault"),
   .enableUpcomingFeature("MemberImportVisibility"),
-
-  .strictMemorySafety(),
 ]
 
-var package = Package(
+let package = Package(
   name: "swift-json-ld",
   platforms: [
     .macOS(.v10_15),
@@ -70,11 +68,3 @@ var package = Package(
     ),
   ]
 )
-
-if ProcessInfo.processInfo.environment["ENABLE_SWIFT_PLUGIN"] != nil
-  || ProcessInfo.processInfo.environment["ADDITIONAL_DOCC_ARGUMENTS"] != nil
-{
-  package.dependencies += [
-    .package(url: "https://github.com/apple/swift-docc-plugin.git", from: "1.4.6")
-  ]
-}

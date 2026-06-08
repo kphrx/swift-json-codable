@@ -5,20 +5,20 @@ import PackageDescription
 
 import class Foundation.ProcessInfo
 
-var swiftSettings: [SwiftSetting] {
-  [
-    .unsafeFlags([
-      "-Xfrontend", "-define-availability",
-      "-Xfrontend", "SwiftStdlib 5.9:macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0",
-    ]),
+let swiftSettings: [SwiftSetting] = [
+  .unsafeFlags([
+    "-Xfrontend", "-define-availability",
+    "-Xfrontend", "SwiftStdlib 5.9:macOS 14.0, iOS 17.0, watchOS 10.0, tvOS 17.0",
+  ]),
 
-    .enableUpcomingFeature("ExistentialAny"),
-    .enableUpcomingFeature("InternalImportsByDefault"),
-    .enableUpcomingFeature("MemberImportVisibility"),
-  ]
-}
+  .enableUpcomingFeature("ExistentialAny"),
+  .enableUpcomingFeature("InternalImportsByDefault"),
+  .enableUpcomingFeature("MemberImportVisibility"),
 
-var package = Package(
+  .define("URLSessionDocumentLoader"),
+]
+
+let package = Package(
   name: "swift-json-ld",
   platforms: [
     .macOS(.v10_15),
