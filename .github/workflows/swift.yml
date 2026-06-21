@@ -58,7 +58,7 @@ jobs:
             echo "ci_versions=6.0-6.1-6.2"
           } >> "$GITHUB_OUTPUT"
 
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: Cache swiftly
         uses: actions/cache@v5
@@ -137,7 +137,7 @@ jobs:
         include: ${{ fromJson(needs.install-swiftly.outputs.versions) }}
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: Restore swiftly
         uses: actions/cache/restore@v5
@@ -161,7 +161,7 @@ jobs:
 
       - name: Checkout w3c/json-ld-api
         if: ${{ matrix.version == needs.install-swiftly.outputs.current_version }}
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           repository: w3c/json-ld-api
           path: vender/json-ld-api
@@ -190,7 +190,7 @@ jobs:
     needs: install-swiftly
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: Restore swiftly
         uses: actions/cache/restore@v5
